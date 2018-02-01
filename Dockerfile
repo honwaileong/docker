@@ -45,9 +45,5 @@ RUN wget http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/July12/osu-
       && cd osu-micro-benchmarks-3.8-July12 \
       && ./configure \
       && make && make install
- 
-RUN cd ./osu-micro-benchmarks-3.8-July12/mpi/one-sided \
-      && mpiexec --version \
-      && mpirun -n 2 ./osu_get_latency \
-      && mpirun -n 2 ./osu_get_bw
+
 CMD ["/bin/bash"]
