@@ -46,4 +46,6 @@ RUN wget http://www.nersc.gov/assets/Trinity--NERSC-8-RFP/Benchmarks/July12/osu-
       && ./configure \
       && make && make install
 
+RUN echo /u/staff/hwleong/craylibs >> /etc/ld.so.conf
+
 CMD ["/bin/bash"]
