@@ -29,16 +29,10 @@ RUN wget http://www.mpich.org/static/downloads/${MPICH_VERSION}/mpich-${MPICH_VE
       && rm -rf /tmp/mpich-src
  
 #### TEST MPICH INSTALLATION ####
-RUN mkdir /tmp/mpich-test
-WORKDIR /tmp/mpich-test
-COPY mpich-test .
-RUN sh test.sh
-RUN rm -rf /tmp/mpich-test
  
 #### CLEAN UP ####
 WORKDIR /
 RUN rm -rf /tmp/*
- 
  
 # Get the benchmark codes
 RUN mkdir -p /ptmp/git/ULHPC
